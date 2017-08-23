@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements
         // Set up the recycler view
         mRecyclerView = (RecyclerView) findViewById(R.id.places_list_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // TODO (3) Modify the Adapter to take a PlaceBuffer in the constructor
         mAdapter = new PlaceListAdapter(this, null);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -120,6 +121,14 @@ public class MainActivity extends AppCompatActivity implements
         mGeofencing = new Geofencing(this, mClient);
 
     }
+
+    // TODO (1) Implement a method called refreshPlacesData that:
+    // - Queries all the locally stored Places IDs
+    // - Calls Places.GeoDataApi.getPlaceById with that list of IDs
+    // Note: When calling Places.GeoDataApi.getPlaceById use the same GoogleApiClient created
+    // in MainActivity's onCreate (you will have to declare it as a private member)
+    //TODO (8) Set the getPlaceById callBack so that onResult calls the Adapter's swapPlaces with the result
+    //TODO (2) call refreshPlacesData in GoogleApiClient's onConnected and in the Add New Place button click event
 
     // TODO (5) Override onConnected, onConnectionSuspended and onConnectionFailed for GoogleApiClient
     // TODO (7) Override onResume and inside it initialize the location permissions checkbox
@@ -214,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements
 
         // TODO (3) Implement onActivityResult and check that the requestCode is PLACE_PICKER_REQUEST
         // TODO (4) In onActivityResult, use PlacePicker.getPlace to extract the Place ID and insert it into the DB
-        
+
     }
 
 

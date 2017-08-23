@@ -187,5 +187,5 @@
     </LinearLayout>
 
     <!-- TODO (6) Add a LinearLayout that contains a checkbox to grant the location permissions and set the checkbox click listener to call onLocationPermissionClicked -->
-
+    <!-- TODO (9) Add the "Powered by Google" logo and a link to Google's privacy policy here -->
 </RelativeLayout>
