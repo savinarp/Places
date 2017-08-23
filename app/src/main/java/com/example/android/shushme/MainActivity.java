@@ -298,6 +298,8 @@ public class MainActivity extends AppCompatActivity implements
             locationPermissions.setEnabled(false);
         }
 
+        //TODO (3) Initialize ringer permissions checkbox
+
         // Initialize ringer permissions checkbox
         CheckBox ringerPermissions = (CheckBox) findViewById(R.id.ringer_permissions_checkbox);
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -314,6 +316,8 @@ public class MainActivity extends AppCompatActivity implements
         Intent intent = new Intent(android.provider.Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
         startActivity(intent);
     }
+
+    // TODO (2) Implement onRingerPermissionsClicked to launch ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS
 
     public void onLocationPermissionClicked(View view) {
         ActivityCompat.requestPermissions(MainActivity.this,

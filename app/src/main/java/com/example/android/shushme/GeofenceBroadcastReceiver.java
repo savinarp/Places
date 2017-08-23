@@ -16,10 +16,19 @@ package com.example.android.shushme;
 * limitations under the License.
 */
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.media.AudioManager;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
+
+import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.GeofencingEvent;
 
 public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
@@ -39,6 +48,13 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
         GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
         if (geofencingEvent.hasError()) {
             Log.e(TAG, String.format("Error code : %d", geofencingEvent.getErrorCode()));
+
+            // TODO (4) Use GeofencingEvent.fromIntent to retrieve the GeofencingEvent that caused the transition
+            // TODO (5) Call getGeofenceTransition to get the transition type and use AudioManager to set the
+            // phone ringer mode based on the transition type. Feel free to create a helper method (setRingerMode)
+            // TODO (6) Show a notification to alert the user that the ringer mode has changed.
+            // Feel free to create a helper method (sendNotification)
+
             return;
         }
 
